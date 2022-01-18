@@ -25,10 +25,38 @@ const db = mysql.createConnection(
 //     });
 // });
 
-// querying the mysql database to test connection
-db.query(`SELECT * FROM candidates`, (err, rows) => {
-    console.log(rows);
-});
+// // querying the mysql database to test connection / request list of candidates
+// db.query(`SELECT * FROM candidates`, (err, rows) => {
+//     console.log(rows);
+// });
+
+// GET a single candidate
+// db.query(`SELECT * FROM candidates WHERE id = 1`, (err, row) => {
+//     if (err) {
+//         console.log(err);
+//     }
+//     console.log(row);
+// });
+
+// delete a candidate
+// db.query(`DELETE FROM candidates WHERE id = ?`, 1, (err, result) => {
+//     if (err) {
+//         console.log(err);
+//     }
+//     console.log(result);
+// });
+
+// // create a candidate
+// const sql = `INSERT INTO candidates (id, first_name, last_name, industry_connected)
+//                 VALUES (?,?,?,?)`;
+// const params = [1, 'Rondald', 'Firbank', 1];
+
+// db.query(sql, params, (err, result) => {
+//     if (err) {
+//         console.log(err);
+//     }
+//     console.log(result);
+// });
 
 // Default response for any other request (not found)
 // route that handles user requests that aren't supported by the app
